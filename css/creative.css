@@ -159,7 +159,7 @@ body {
             } 
           }
 
-          @keyframes logo-shrink {
+          @keyframes logo-shrink { /* squishes oddly on SB - try making small logo rem-based etc? */
             0% {
               opacity: 1;
               width: 3rem;
