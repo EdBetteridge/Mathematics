@@ -25,7 +25,7 @@ a {
   -moz-transition: all 0.2s;
   transition: all 0.2s; }
   a:focus, a:hover {
-    color: #26ADE4; }
+    color: #26ade4; }
 
 h1,
 h2,
@@ -77,6 +77,15 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #222222; }
 
+.img-circle {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; }
+
 #mainNav {
   border-color: rgba(34, 34, 34, 0.05);
   background-color: white;
@@ -90,7 +99,7 @@ body {
     color: #26ADE4;
     font-family: 'Ubuntu', 'Helvetica Neue', Arial, sans-serif; }
     #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-      color: #26ADE4; }
+      color: #26ade4; }
   #mainNav .navbar-toggle {
     font-size: 12px;
     font-weight: 700;
@@ -120,13 +129,12 @@ body {
         color: rgba(255, 255, 255, 0.7); }
         #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
           color: white; }
-         #mainNav .logo {
-            width: 3rem;
-            position: fixed;
-            top: 2%; /*padding-top: inherit;*/
-            left: calc(50% - 1.5rem);
-            content: url(../img/logo.png);
-        }
+      #mainNav .logo {
+        width: 3rem;
+        position: fixed;
+        top: 2%;
+        left: calc(50% - 1.5rem);
+        content: url(../img/logo.png); }
       #mainNav .navbar-nav > li.nav-item > a.nav-link,
       #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
         color: rgba(255, 255, 255, 0.7); }
@@ -140,48 +148,22 @@ body {
           font-size: 16px;
           color: #26ADE4; }
           #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
-            color: #26ADE4; }
+            color: #26ade4; }
+        #mainNav.navbar-shrink .logo {
+          animation-name: logo-shrink;
+          animation-duration: 1s;
+          animation-direction: normal;
+          width: 50px;
+          height: 50px;
+          top: calc(1.5rem - 25px);
+          left: calc(50% - 25px);
+          content: url("../img/logo_small_basic_smooth.svg"); }
         #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link,
         #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
           color: #222222; }
           #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover,
           #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover {
-            color: #26ADE4; } 
-        #mainNav.navbar-shrink .logo {
-            animation-name: logo-shrink;
-            animation-duration: 1s;
-            /*animation-direction: normal;*/
-            width: 50px;
-            height: 50px;
-            top: calc(1.5rem - 25px);
-            left: calc(50% - 25px);
-            content:url("../img/logo_small_basic_smooth.svg");
-            } 
-          }
-
-          @keyframes logo-shrink { /* squishes oddly on SB - try making small logo rem-based etc? */
-            0% {
-              opacity: 1;
-              width: 3rem;
-              position: fixed;
-              top: 2%; /*padding-top: inherit;*/
-              left: calc(50% - 1.5rem);
-              content:url("../img/logo.png");
-            }
-            
-            50% {
-              opacity: 0.1;       
-              width: 50px;
-              height: 50px;
-              top: calc(1.5rem - 25px);
-              left: calc(50% - 25px);
-            }
-
-            100% {
-              content:url("../img/logo_small_basic_smooth.svg");
-              opacity: 1;
-            }
-          }
+            color: #26ADE4; } }
 
 header.masthead {
   position: relative;
@@ -189,7 +171,8 @@ header.masthead {
   min-height: auto;
   text-align: center;
   color: white;
-  /*background-image: url("../img/header.jpg");*/
+  /*background-image: url('../img/header.jpg');*/
+  background-color: #535354;
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -213,6 +196,15 @@ header.masthead {
       font-weight: 300;
       margin-bottom: 50px;
       color: rgba(255, 255, 255, 0.7); }
+  header.masthead .parallax {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*Parallax*/
+    background-size: cover;
+    z-index: -1; }
   @media (min-width: 768px) {
     header.masthead {
       height: 100%;
@@ -236,20 +228,6 @@ header.masthead {
             margin-right: auto;
             margin-left: auto; } }
 
-header.masthead { /*Seem to need it here to override?*/
-  background-color: #535354; } 
-
-.parallax {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /*Parallax*/
-  background-size: cover;
-  z-index: -1; 
-}
-          
-
 .service-box {
   max-width: 400px;
   margin: 50px auto 0; }
@@ -258,7 +236,6 @@ header.masthead { /*Seem to need it here to override?*/
       margin: 20px auto 0; } }
   .service-box p {
     margin-bottom: 0; }
-
 
 .portfolio-box {
   position: relative;
@@ -274,7 +251,7 @@ header.masthead { /*Seem to need it here to override?*/
     text-align: center;
     opacity: 0;
     color: white;
-    background: rgba(77, 188, 233, 0.9);
+    background: rgba(38, 173, 228, 0.9);
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s; }
@@ -311,9 +288,8 @@ header.masthead { /*Seem to need it here to override?*/
 
 .text-primary {
   color: #26ADE4 !important; }
-
-.text-primary:hover { /***Custom*/
-  color: #4DBCE9 !important; }
+  .text-primary:hover {
+    color: #188fbf !important; }
 
 .no-gutter > [class*='col-'] {
   padding-right: 0;
@@ -362,24 +338,24 @@ header.masthead { /*Seem to need it here to override?*/
   background-color: #26ADE4; }
   .btn-primary.focus, .btn-primary:focus {
     color: white;
-    border-color: #a4270d;
-    background-color: #4DBCE9; }
+    border-color: #0f5c7b;
+    background-color: #188fbf; }
   .btn-primary:hover {
     color: white;
-    border-color: #e13612;
-    background-color: #4DBCE9; }
+    border-color: #1788b6;
+    background-color: #188fbf; }
   .btn-primary.active, .btn-primary:active,
   .open > .btn-primary.dropdown-toggle {
     color: white;
-    border-color: #e13612;
-    background-color: #4DBCE9; }
+    border-color: #1788b6;
+    background-color: #188fbf; }
     .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover,
     .open > .btn-primary.dropdown-toggle.focus,
     .open > .btn-primary.dropdown-toggle:focus,
     .open > .btn-primary.dropdown-toggle:hover {
       color: white;
-      border-color: #a4270d;
-      background-color: #00DFFC; }
+      border-color: #0f5c7b;
+      background-color: #14779f; }
   .btn-primary.active, .btn-primary:active,
   .open > .btn-primary.dropdown-toggle {
     background-image: none; }
@@ -403,13 +379,142 @@ header.masthead { /*Seem to need it here to override?*/
 .btn-xl {
   padding: 15px 30px; }
 
-.img-circle {
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+/* squishes oddly on SB - try making small logo rem-based etc? */
+@keyframes logo-shrink {
+  0% {
+    opacity: 1;
+    width: 3rem;
+    position: fixed;
+    top: 2%;
+    /*padding-top: inherit;*/
+    left: calc(50% - 1.5rem);
+    content: url("../img/logo.png"); }
+  50% {
+    opacity: 0.1;
+    width: 50px;
+    height: 50px;
+    top: calc(1.5rem - 25px);
+    left: calc(50% - 25px); }
+  100% {
+    content: url("../img/logo_small_basic_smooth.svg");
+    opacity: 1; } }
 
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
+/* Styles for dialog window */
+.small-dialog {
+  background: white;
+  padding: 20px 30px;
+  text-align: left;
+  max-width: 400px;
+  margin: 40px auto;
+  position: relative; }
+
+/**
+ * Fade-zoom animation for first dialog
+ */
+/* start state */
+.my-mfp-zoom-in .zoom-anim-dialog {
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8); }
+
+/* animate in */
+.my-mfp-zoom-in.mfp-ready .zoom-anim-dialog {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1); }
+
+/* animate out */
+.my-mfp-zoom-in.mfp-removing .zoom-anim-dialog {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0; }
+
+/* Dark overlay, start state */
+.my-mfp-zoom-in.mfp-bg {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out; }
+
+/* animate in */
+.my-mfp-zoom-in.mfp-ready.mfp-bg {
+  opacity: 0.8; }
+
+/* animate out */
+.my-mfp-zoom-in.mfp-removing.mfp-bg {
+  opacity: 0; }
+
+/**
+ * Fade-move animation for second dialog
+ */
+/* at start */
+.my-mfp-slide-bottom .zoom-anim-dialog {
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  -webkit-transform: translateY(-20px) perspective(600px) rotateX(10deg);
+  -moz-transform: translateY(-20px) perspective(600px) rotateX(10deg);
+  -ms-transform: translateY(-20px) perspective(600px) rotateX(10deg);
+  -o-transform: translateY(-20px) perspective(600px) rotateX(10deg);
+  transform: translateY(-20px) perspective(600px) rotateX(10deg); }
+
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
+  opacity: 1;
+  -webkit-transform: translateY(0) perspective(600px) rotateX(0);
+  -moz-transform: translateY(0) perspective(600px) rotateX(0);
+  -ms-transform: translateY(0) perspective(600px) rotateX(0);
+  -o-transform: translateY(0) perspective(600px) rotateX(0);
+  transform: translateY(0) perspective(600px) rotateX(0); }
+
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing .zoom-anim-dialog {
+  opacity: 0;
+  -webkit-transform: translateY(-10px) perspective(600px) rotateX(10deg);
+  -moz-transform: translateY(-10px) perspective(600px) rotateX(10deg);
+  -ms-transform: translateY(-10px) perspective(600px) rotateX(10deg);
+  -o-transform: translateY(-10px) perspective(600px) rotateX(10deg);
+  transform: translateY(-10px) perspective(600px) rotateX(10deg); }
+
+/* Dark overlay, start state */
+.my-mfp-slide-bottom.mfp-bg {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out; }
+
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready.mfp-bg {
+  opacity: 0.8; }
+
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing.mfp-bg {
+  opacity: 0; }
+
+.popup-with-zoom-anim {
+  cursor: pointer; }
+
+.white-popup-block {
+  background: #FFF;
+  padding: 20px 30px;
+  text-align: left;
+  max-width: 650px;
+  margin: 40px auto;
+  position: relative; }

@@ -13,6 +13,7 @@
     text-align: center;
     opacity: 0;
     color: white;
+    // background: fade-out($theme-primary-light, .1);
     background: fade-out($theme-primary, .1);
     @include transition-all;
     .portfolio-box-caption-content {

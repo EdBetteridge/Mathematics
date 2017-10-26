@@ -1,0 +1,22 @@
+/* squishes oddly on SB - try making small logo rem-based etc? */
+@keyframes logo-shrink {
+  0% {
+    opacity: 1;
+    width: 3rem;
+    position: fixed;
+    top: 2%; /*padding-top: inherit;*/
+    left: calc(50% - 1.5rem);
+    content: url("../img/logo.png");
+  }
+  50% {
+    opacity: 0.1;
+    width: 50px;
+    height: 50px;
+    top: calc(1.5rem - 25px);
+    left: calc(50% - 25px);
+  }
+  100% {
+    content: url("../img/logo_small_basic_smooth.svg");
+    opacity: 1;
+  }
+}
