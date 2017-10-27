@@ -130,11 +130,14 @@ body {
         #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
           color: white; }
       #mainNav .logo {
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s;
         width: 3rem;
         position: fixed;
         top: 2%;
         left: calc(50% - 1.5rem);
-        content: url(../img/logo.png); }
+        content: url("../img/logo.png"); }
       #mainNav .navbar-nav > li.nav-item > a.nav-link,
       #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
         color: rgba(255, 255, 255, 0.7); }
@@ -150,9 +153,6 @@ body {
           #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
             color: #26ade4; }
         #mainNav.navbar-shrink .logo {
-          animation-name: logo-shrink;
-          animation-duration: 1s;
-          animation-direction: normal;
           width: 50px;
           height: 50px;
           top: calc(1.5rem - 25px);
